@@ -2,11 +2,11 @@
 <% @search_results.each do |member| %>
   <div class="display-result">
     <ul>
-      <li class="display-name"><%= member["name"] %></li>
-      <li class="display-role"><%= member["role"] %></li>
-      <li class="display-party"><%= member["party"] %></li>
-      <li class="display-district"><%= member["district"] %></li>
-      <li class="display-seniority"><%= member["seniority"] %></li>
+      <li class="display-name">Name: <%= member["name"] %></li>
+      <li class="display-role">Role: <%= member["role"] %></li>
+      <li class="display-party">Party: <%= member["party"] %></li>
+      <li class="display-district">District: <%= member["district"] %></li>
+      <li class="display-seniority">Seniority: <%= member["seniority"] %></li>
     </ul>
   </div>
 <% end %>
