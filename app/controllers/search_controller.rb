@@ -6,7 +6,7 @@ class SearchController < ApplicationController
       req.headers['X-API-Key'] = ENV["propublica_key"]
     end
 
-    @search_results = JSON.parse(response.body)
+    @search_results = JSON.parse(response.body)["results"]
   end
 
 end
