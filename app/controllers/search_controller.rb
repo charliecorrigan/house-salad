@@ -6,7 +6,8 @@ class SearchController < ApplicationController
       req.headers['X-API-Key'] = ENV["propublica_key"]
     end
 
-    @search_results = JSON.parse(response.body)
+    unsorted_results = JSON.parse(response.body)["results"]
+    @search_results = unsorted_results.sort_by { |member| member["seniority"].to_i }
   end
 
 end
