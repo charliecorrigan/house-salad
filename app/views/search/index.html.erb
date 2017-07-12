@@ -1,0 +1,12 @@
+<h2><%= @search_results.count %> Results</h2>
+<% @search_results.each do |member| %>
+  <div class="display-result">
+    <ul>
+      <li class="display-name"><%= member["name"] %></li>
+      <li class="display-role"><%= member["role"] %></li>
+      <li class="display-party"><%= member["party"] %></li>
+      <li class="display-district"><%= member["district"] %></li>
+      <li class="display-seniority"><%= member["seniority"] %></li>
+    </ul>
+  </div>
+<% end %>
