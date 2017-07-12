@@ -1,8 +1,8 @@
 class SearchController < ApplicationController
   def index
-    conn = Faraday.new(:url => 'https://api.propublica.org/congress/v1/members/house/CO/current.json') 
+    conn = Faraday.new(:url => "https://api.propublica.org/congress/v1/members/house/#{params["state"]}/current.json") 
     response = conn.get do |req|
-      req.url 'https://api.propublica.org/congress/v1/members/house/CO/current.json'
+      req.url "https://api.propublica.org/congress/v1/members/house/#{params["state"]}/current.json"
       req.headers['X-API-Key'] = ENV["propublica_key"]
     end
 
