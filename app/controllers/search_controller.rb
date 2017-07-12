@@ -7,7 +7,7 @@ class SearchController < ApplicationController
     end
 
     unsorted_results = JSON.parse(response.body)["results"]
-    @search_results = unsorted_results.sort_by { |member| member["seniority"].to_i }
+    @search_results = unsorted_results.sort_by { |member| member["seniority"].to_i }.reverse
   end
 
 end
